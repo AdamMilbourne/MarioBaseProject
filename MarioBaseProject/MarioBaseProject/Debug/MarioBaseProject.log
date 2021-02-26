@@ -1,2 +1,11 @@
-﻿  Source.cpp
+﻿  CharacterLuigi.cpp
+  GameScreenLevel1.cpp
+  GameScreenManager.cpp
+  Texture2D.cpp
+D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\Texture2D.cpp(65,42): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\Texture2D.cpp(65,42): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\Texture2D.cpp(65,57): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\Texture2D.cpp(65,57): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\GameScreenLevel1.cpp(69): warning C4715: 'GameScreenLevel1::SetUpLevel1': not all control paths return a value
   MarioBaseProject.vcxproj -> D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\Debug\MarioBaseProject.exe

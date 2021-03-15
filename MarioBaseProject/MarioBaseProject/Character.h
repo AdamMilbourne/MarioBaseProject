@@ -2,6 +2,7 @@
 #include <SDL.h>
 #include <iostream>
 #include "Commons.h"
+#include "Texture2D.h"
 using namespace std;
 
 class Texture2D;
@@ -18,6 +19,7 @@ protected:
 	bool m_jumping;
 	bool m_can_jump;
 	float m_jump_force;
+	float m_collision_radius;
 
 
 
@@ -34,6 +36,10 @@ public:
 	virtual void Update(float deltatime, SDL_Event e);
 	void SetPosition(Vector2D new_position);
 	Vector2D GetPostion();
+
+	float GetCollisionRadius();
+
+	Rect2D GetCollisionBox() { return Rect2D(m_position.x, m_position.y, m_texture->GetWidth(), m_texture->GetHeight()); }
 private:
 
 	FACING m_facing_direction;

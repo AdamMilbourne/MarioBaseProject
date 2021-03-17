@@ -1,5 +1,5 @@
 ﻿  GameScreenLevel1.cpp
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\Character.h(42,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\Character.h(42,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\GameScreenLevel1.cpp(77): warning C4715: 'GameScreenLevel1::SetUpLevel1': not all control paths return a value
+D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\Character.h(43,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\Character.h(43,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\GameScreenLevel1.cpp(79): warning C4715: 'GameScreenLevel1::SetUpLevel1': not all control paths return a value
   MarioBaseProject.vcxproj -> D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\Debug\MarioBaseProject.exe

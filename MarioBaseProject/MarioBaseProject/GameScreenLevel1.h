@@ -4,6 +4,7 @@
 #include "GameScreen.h"
 #include "Commons.h"
 #include "Character.h"
+#include "LevelMap.h"
 
 class CharacterLuigi;
 class CharacterMario;
@@ -21,6 +22,9 @@ private:
 	bool SetUpLevel1();
 	CharacterMario* Mario;
 	CharacterLuigi* Luigi;
+	//week 9
+	void SetLevelMap();
+	LevelMap* m_level_map;
 };
 #endif //_GAMESCREENLEVEL1_H
 #include "GameScreen.h"

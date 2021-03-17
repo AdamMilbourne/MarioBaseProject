@@ -3,6 +3,7 @@
 #include <iostream>
 #include "Commons.h"
 #include "Texture2D.h"
+#include "LevelMap.h"
 using namespace std;
 
 class Texture2D;
@@ -29,7 +30,7 @@ protected:
 	virtual void Jump();
 
 public:
-	Character(SDL_Renderer* renderer, string imagepath, Vector2D start_position);
+	Character(SDL_Renderer* renderer, string imagepath, Vector2D start_position, LevelMap* map);
 	~Character();
 
 	virtual void Render();
@@ -42,6 +43,7 @@ public:
 	Rect2D GetCollisionBox() { return Rect2D(m_position.x, m_position.y, m_texture->GetWidth(), m_texture->GetHeight()); }
 private:
 
-	FACING m_facing_direction;
+	FACING m_facing_direction; 
+	LevelMap* m_current_level_map;
 };
 

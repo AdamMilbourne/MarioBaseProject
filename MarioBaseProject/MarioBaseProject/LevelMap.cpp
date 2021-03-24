@@ -47,3 +47,11 @@ void LevelMap::ChangeTileAt(unsigned int row, unsigned int column, unsigned int 
 	//change row 9 column 8 to 0
 
 }
+
+//void LevelMap::ChangeTileAt(unsigned int row, unsigned int column, unsigned int new_value)
+//{
+//	if (/*collision between 2 Rects? one being player one being the object*/)                   ATTEMPT AT THE ADDITIONAL TASK, NOT SURE HOW TO HAVE IT HAPPEN TO ANY SPACE NEEDED
+//	{
+//		ChangeTileAt(/*pos1, pos2, change to number*/)
+//	}
+//}

@@ -4,6 +4,7 @@
 #include "CharacterMario.h"
 #include "CharacterLuigi.h"
 #include "Collisions.h"
+#include "PowBlock.h"
 using namespace std;
 
 //constructor
@@ -28,22 +29,40 @@ GameScreenLevel1::~GameScreenLevel1()
 	Luigi = nullptr;
 
 	m_level_map = nullptr;
+
+	delete m_pow_block;  //think this is right 
+	m_pow_block = nullptr;
+
 }
 
 
 void GameScreenLevel1::Render()
 {
 	//draw background
-	m_background_texture->Render(Vector2D(), SDL_FLIP_NONE);
+	m_background_texture->Render(Vector2D(0, m_background_yPos), SDL_FLIP_NONE);
 	Mario->Render();
 	Luigi->Render();
 
-
+	m_pow_block->Render(); //think im calling the right render function
 }
 
 
 void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 {
+	if (m_screenshake)
+	{
+		m_shake_time -= deltaTime;
+		m_wobble++;
+		m_background_yPos = sin(m_wobble);
+		m_background_yPos *= 3.0f;
+
+		if (m_shake_time <= 0.0f)
+		{
+			m_shake_time = false;
+			m_background_yPos = 0.0f;
+		}
+	}
+	UpdatePOWBlock(); //might be wrong place in function but should be fine as update is called indefinately 
 	//update character
 	Mario->Update(deltaTime, e);
 	Luigi->Update(deltaTime, e);
@@ -55,6 +74,7 @@ void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 	{
 		cout << "box hit" << endl;
 	}
+
 }
 
 bool GameScreenLevel1::SetUpLevel1()
@@ -74,7 +94,9 @@ bool GameScreenLevel1::SetUpLevel1()
 		return false;
 	}
 
-	
+	m_pow_block = new PowBlock(m_renderer, m_level_map);
+	m_screenshake = false;
+	m_background_yPos = 0.0f;
 
 }
 
@@ -101,4 +123,27 @@ void GameScreenLevel1::SetLevelMap()
 	}
 	//set new one
 	m_level_map = new LevelMap(map);
+}
+
+void GameScreenLevel1::DoScreenShake()
+{
+	m_screenshake = true;
+	m_shake_time = SHAKE_DURATION;
+	m_wobble = 0.0f;
+}
+
+void GameScreenLevel1::UpdatePOWBlock()
+{
+	if (Collisions::Instance()->Box(m_pow_block->GetCollisionBox(),Mario->GetCollisionBox()))
+	{
+		if (m_pow_block <= 0) //possibly what is wrong
+		{
+			if (Mario->IsJumping())
+			{
+				DoScreenShake();
+				m_pow_block->TakeHit();
+				Mario->CancelJump();
+			}
+		}
+	}
 }

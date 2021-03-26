@@ -147,4 +147,17 @@ void GameScreenLevel1::UpdatePOWBlock()
 			}
 		}
 	}
+	if (Collisions::Instance()->Box(m_pow_block->GetCollisionBox(), Luigi->GetCollisionBox()))
+	{
+		if (m_pow_block->IsAvailable())
+		{
+			if (Luigi->IsJumping())
+			{
+				DoScreenShake();
+				cout << "pow block collision" << endl;
+				m_pow_block->TakeHit();
+				Luigi->CancelJump();
+			}
+		}
+	}
 }

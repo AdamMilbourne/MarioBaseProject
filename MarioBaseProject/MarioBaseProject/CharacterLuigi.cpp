@@ -19,14 +19,14 @@ void CharacterLuigi::Update(float deltatime, SDL_Event e)
 			//m_position.x = m_position.x - 1;
 			//m_facing_direction = FACING_LEFT;
 			m_moving_left = true;
-			cout << "a pressed" << endl;
+			//cout << "a pressed" << endl;
 
 			break;
 		case SDLK_d:
 			//m_position.x = m_position.x + 1;
 			//m_facing_direction = FACING_RIGHT;
 			m_moving_right = true;
-			cout << "d pressed" << endl;
+			//cout << "d pressed" << endl;
 			break;
 
 			if (m_can_jump == true)
@@ -44,14 +44,14 @@ void CharacterLuigi::Update(float deltatime, SDL_Event e)
 			//m_position.x = m_position.x - 1;
 			//m_facing_direction = FACING_LEFT;
 			m_moving_left = false;
-			cout << "a key up" << endl;
+			//cout << "a key up" << endl;
 
 			break;
 		case SDLK_d:
 			//m_position.x = m_position.x + 1;
 			//m_facing_direction = FACING_RIGHT;
 			m_moving_right = false;
-			cout << "d key up" << endl;
+			//cout << "d key up" << endl;
 			break;
 		}
 		break;

@@ -37,21 +37,8 @@ int LevelMap::GetTileAt(unsigned int h, unsigned int w)
 	return 0;
 }
 
+
 void LevelMap::ChangeTileAt(unsigned int row, unsigned int column, unsigned int new_value)
 {
-	//row 9 
-	//column 8 & 9
-
-	//if mario/luigi collide with pow block (implement bottom of block later) 
-	//change row 9 column 8 to 0 
-	//change row 9 column 8 to 0
-
+	m_map[row][column] = new_value;
 }
-
-//void LevelMap::ChangeTileAt(unsigned int row, unsigned int column, unsigned int new_value)
-//{
-//	if (/*collision between 2 Rects? one being player one being the object*/)                   ATTEMPT AT THE ADDITIONAL TASK, NOT SURE HOW TO HAVE IT HAPPEN TO ANY SPACE NEEDED
-//	{
-//		ChangeTileAt(/*pos1, pos2, change to number*/)
-//	}
-//}

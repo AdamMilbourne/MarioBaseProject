@@ -1,6 +1,14 @@
-﻿  GameScreenLevel1.cpp
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\Character.h(43,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\Character.h(43,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+﻿  PowBlock.cpp
 D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\PowBlock.h(12,110): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\GameScreenLevel1.cpp(101): warning C4715: 'GameScreenLevel1::SetUpLevel1': not all control paths return a value
+D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\PowBlock.cpp(15,44): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\PowBlock.cpp(16,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\PowBlock.cpp(37,12): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\PowBlock.cpp(39,43): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\PowBlock.cpp(39,43): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\PowBlock.cpp(39,62): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\PowBlock.cpp(39,62): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\PowBlock.cpp(43,4): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\PowBlock.cpp(43,4): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\PowBlock.cpp(43,23): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\PowBlock.cpp(43,23): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   MarioBaseProject.vcxproj -> D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\Debug\MarioBaseProject.exe

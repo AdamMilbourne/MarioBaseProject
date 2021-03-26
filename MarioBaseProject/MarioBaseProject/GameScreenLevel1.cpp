@@ -136,11 +136,12 @@ void GameScreenLevel1::UpdatePOWBlock()
 {
 	if (Collisions::Instance()->Box(m_pow_block->GetCollisionBox(),Mario->GetCollisionBox()))
 	{
-		if (m_pow_block <= 0) //possibly what is wrong
+		if (m_pow_block->IsAvailable())
 		{
 			if (Mario->IsJumping())
 			{
 				DoScreenShake();
+				cout << "pow block collision" << endl;
 				m_pow_block->TakeHit();
 				Mario->CancelJump();
 			}

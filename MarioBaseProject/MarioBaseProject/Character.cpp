@@ -21,6 +21,8 @@ Character::Character(SDL_Renderer* renderer, string imagepath, Vector2D start_po
 	m_collision_radius = 15.0f;
 
 	m_current_level_map = map;
+
+	m_alive = true; //might be in the wrong place
 }
 Character::~Character()
 {

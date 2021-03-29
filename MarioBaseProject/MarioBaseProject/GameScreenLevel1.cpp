@@ -3,6 +3,8 @@
 #include "Texture2D.h"
 #include "CharacterMario.h"
 #include "CharacterLuigi.h"
+#include "CharacterKoopa.h"
+#include "Character.h"
 #include "Collisions.h"
 #include "PowBlock.h"
 using namespace std;
@@ -12,6 +14,8 @@ GameScreenLevel1::GameScreenLevel1(SDL_Renderer* renderer) : GameScreen(renderer
 {
 	m_renderer = renderer;
 	SetUpLevel1();
+
+	
 }
 
 //destructor
@@ -30,20 +34,29 @@ GameScreenLevel1::~GameScreenLevel1()
 
 	m_level_map = nullptr;
 
-	delete m_pow_block;  //think this is right 
+	delete m_pow_block;  
 	m_pow_block = nullptr;
+
+	m_enemies.clear();
 
 }
 
 
 void GameScreenLevel1::Render()
 {
+
+	//draw enemies
+	for (int i = 0; i < m_enemies.size(); i++)
+	{
+		m_enemies[i]->Render();
+	}
+
 	//draw background
 	m_background_texture->Render(Vector2D(0, m_background_yPos), SDL_FLIP_NONE);
 	Mario->Render();
 	Luigi->Render();
 
-	m_pow_block->Render(); //think im calling the right render function
+	m_pow_block->Render();
 }
 
 
@@ -62,6 +75,7 @@ void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 			m_background_yPos = 0.0f;
 		}
 	}
+	UpdateEnemies(deltaTime, e); //might also be in wrong place test out later
 	UpdatePOWBlock(); //might be wrong place in function but should be fine as update is called indefinately 
 	//update character
 	Mario->Update(deltaTime, e);
@@ -160,4 +174,62 @@ void GameScreenLevel1::UpdatePOWBlock()
 			}
 		}
 	}
+}
+
+void GameScreenLevel1::UpdateEnemies(float deltatime, SDL_Event e)
+{
+	if (!m_enemies.empty())
+	{
+		int enemyIndexToDelete = -1;
+		for (unsigned int i = 0; i < m_enemies.size(); i++)
+		{
+			//check if the enemy is on the bottom row of tiles
+			if (m_enemies[i]->GetPosition().y > 300.0f)
+			{
+				//is the enemy off screen to the left / right?
+				if (m_enemies[i]->GetPosition().x < (float)(-m_enemies[i]->GetCollisionBox().width * 0.5f) || m_enemies[
+					i]->GetPosition().x > SCREEN_WIDTH - (float)(m_enemies[i]->GetCollisionBox().width * 0.55f))
+					m_enemies[i]->SetAlive(false);
+			}
+			//now do the update
+
+			m_enemies[i]->Update(deltatime, e);
+
+			//check to see if enemy collides with player
+			if ((m_enemies[i]->GetPosition().y > 300.0f || m_enemies[i]->GetPosition().y <= 64.0f) && (m_enemies[i]->
+				GetPosition().x < 64.0f || m_enemies[i]->GetPosition().x > SCREEN_WIDTH - 96.0f))
+			{
+				//ignore collisions if behind pipe
+			}
+			else
+			{
+				if (Collisions::Instance()->Circle(m_enemies[i], Mario))
+				{
+					if (m_enemies[i]->GetInjured())
+					{
+						m_enemies[i]->SetAlive(false);
+					}
+					else
+					{
+						//kill mario
+					}
+
+				}
+			}
+
+			//if the enemy is no longer alive then schedule it for deletion
+			if (!m_enemies[i]->GetAlive())
+			{
+				enemyIndexToDelete = i;
+			}
+		}
+
+		//remove dead enemies -1 each update
+
+		if (enemyIndexToDelete != -1)
+		{
+			m_enemies.erase(m_enemies.begin() + enemyIndexToDelete);
+		}
+	}
+	
 }

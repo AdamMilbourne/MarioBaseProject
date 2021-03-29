@@ -9,7 +9,7 @@ public:
 	PowBlock(SDL_Renderer* renderer, LevelMap* map);
 	~PowBlock();
 	void Render();
-	Rect2D GetCollisionBox() { return Rect2D(m_position.x, m_position.y, m_single_sprite_w, m_texture->GetHeight()); }         //might be done wrong (CHECK)
+	Rect2D GetCollisionBox() { return Rect2D(m_position.x, m_position.y, m_single_sprite_w, m_texture->GetHeight()); } 
 	void TakeHit();
 	bool IsAvailable() { return m_num_hits_left > 0; }
 

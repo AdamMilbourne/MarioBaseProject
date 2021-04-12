@@ -1,38 +1,7 @@
-﻿  Character.cpp
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\Character.h(47,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\Character.h(47,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  CharacterKoopa.cpp
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\Character.h(47,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\Character.h(47,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\CharacterKoopa.cpp(10,44): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\CharacterKoopa.cpp(11,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\CharacterKoopa.cpp(42,11): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\CharacterKoopa.cpp(46,10): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\CharacterKoopa.cpp(49,42): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\CharacterKoopa.cpp(49,42): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\CharacterKoopa.cpp(49,61): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\CharacterKoopa.cpp(49,61): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\CharacterKoopa.cpp(51,63): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\CharacterKoopa.cpp(51,63): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\CharacterKoopa.cpp(51,82): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\CharacterKoopa.cpp(51,82): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  CharacterLuigi.cpp
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\Character.h(47,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\Character.h(47,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  CharacterMario.cpp
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\Character.h(47,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\Character.h(47,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Collisions.cpp
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\Character.h(47,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\Character.h(47,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  GameScreenLevel1.cpp
+﻿  GameScreenLevel1.cpp
 D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\Character.h(47,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\Character.h(47,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\PowBlock.h(12,110): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\GameScreenLevel1.cpp(49,20): warning C4018: '<': signed/unsigned mismatch
-  GameScreenManager.cpp
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\Character.h(47,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\Character.h(47,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Generating Code...
 D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\GameScreenLevel1.cpp(115): warning C4715: 'GameScreenLevel1::SetUpLevel1': not all control paths return a value
   MarioBaseProject.vcxproj -> D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\Debug\MarioBaseProject.exe

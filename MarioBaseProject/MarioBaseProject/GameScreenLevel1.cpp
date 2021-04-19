@@ -7,6 +7,7 @@
 #include "Character.h"
 #include "Collisions.h"
 #include "PowBlock.h"
+#include <Windows.h>
 using namespace std;
 
 //constructor
@@ -17,6 +18,8 @@ GameScreenLevel1::GameScreenLevel1(SDL_Renderer* renderer) : GameScreen(renderer
 
 	
 }
+//set start parameters
+
 
 //destructor
 GameScreenLevel1::~GameScreenLevel1()
@@ -94,11 +97,19 @@ void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 bool GameScreenLevel1::SetUpLevel1()
 {
 	SetLevelMap();
+
+	//set up enemies
+	for (int i = 0; i < 100; i++)
+	{
+		//RANDOM BETWEEN 4 PIPES
+		CreateKoopa(Vector2D(150, 32), FACING_RIGHT, KOOPA_SPEED);
+		Sleep(10);
+	}
+
 	//set up player
 	Mario = new CharacterMario(m_renderer, "images/Mario.png", Vector2D(64, 330), m_level_map);
 
 	Luigi = new CharacterLuigi(m_renderer, "images/Luigi.png", Vector2D(64, 330), m_level_map);
-
 
 	//Load Texture
 	m_background_texture = new Texture2D(m_renderer);
@@ -111,6 +122,7 @@ bool GameScreenLevel1::SetUpLevel1()
 	m_pow_block = new PowBlock(m_renderer, m_level_map);
 	m_screenshake = false;
 	m_background_yPos = 0.0f;
+
 
 }
 
@@ -144,6 +156,10 @@ void GameScreenLevel1::DoScreenShake()
 	m_screenshake = true;
 	m_shake_time = SHAKE_DURATION;
 	m_wobble = 0.0f;
+	for (int i = 0; i < m_enemies.size(); i++)
+	{
+		m_enemies[i]->TakeDamage();
+	}
 }
 
 void GameScreenLevel1::UpdatePOWBlock()
@@ -209,9 +225,26 @@ void GameScreenLevel1::UpdateEnemies(float deltatime, SDL_Event e)
 					{
 						m_enemies[i]->SetAlive(false);
 					}
+
 					else
 					{
-						//kill mario
+						//MAKE MARIO DIE
+						Mario->SetAlive(false);
+					}
+
+				}
+				else if (Collisions::Instance()->Circle(m_enemies[i], Luigi))
+				{
+					if (m_enemies[i]->GetInjured())
+					{
+						m_enemies[i]->SetAlive(false);
+					}
+
+					else
+					{
+						//MAKE MARIO DIE
+						Mario->SetAlive(false);
+						delete Mario;
 					}
 
 				}
@@ -232,4 +265,11 @@ void GameScreenLevel1::UpdateEnemies(float deltatime, SDL_Event e)
 		}
 	}
 	
+}
+
+void GameScreenLevel1::CreateKoopa(Vector2D position, FACING direction, float speed)
+{
+	
+	Koopa = new CharacterKoopa(m_renderer, "images/Koopa.png", m_level_map, Vector2D(260, 350), FACING_RIGHT, KOOPA_SPEED);
+	m_enemies.push_back(Koopa);
 }

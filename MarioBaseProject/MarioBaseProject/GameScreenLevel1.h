@@ -22,11 +22,16 @@ public:
 	void Render() override;
 	void Update(float deltaTime, SDL_Event e) override;
 	void UpdatePOWBlock();
+
+	
+	
+	
 private:
 	Texture2D* m_background_texture;
 	bool SetUpLevel1();
 	CharacterMario* Mario;
 	CharacterLuigi* Luigi;
+	CharacterKoopa* Koopa;
 	//week 9
 	void SetLevelMap();
 	LevelMap* m_level_map;

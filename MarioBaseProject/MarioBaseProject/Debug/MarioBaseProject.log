@@ -1,3 +1,8 @@
-﻿  Source.cpp
-D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\Source.cpp(119): warning C4715: 'InitSDL': not all control paths return a value
+﻿  GameScreenLevel1.cpp
+D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\Character.h(47,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\Character.h(47,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\PowBlock.h(12,110): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\GameScreenLevel1.cpp(52,20): warning C4018: '<': signed/unsigned mismatch
+D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\GameScreenLevel1.cpp(160,20): warning C4018: '<': signed/unsigned mismatch
+D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\MarioBaseProject\GameScreenLevel1.cpp(127): warning C4715: 'GameScreenLevel1::SetUpLevel1': not all control paths return a value
   MarioBaseProject.vcxproj -> D:\MarioBaseProject\MarioBaseProject\MarioBaseProject\Debug\MarioBaseProject.exe

@@ -45,7 +45,8 @@ private:
 
 	//Tutorial 11 Koopa stuff
 	void UpdateEnemies(float deltatime, SDL_Event e);
-	void CreateKoopa(Vector2D position, FACING direction, float speed);
+	void CreateKoopaRight(Vector2D position, FACING direction, float speed);
+	void CreateKoopaLeft(Vector2D position, FACING direction, float speed);
 	vector<CharacterKoopa*> m_enemies;
 
 };

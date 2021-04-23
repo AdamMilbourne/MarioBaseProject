@@ -91,20 +91,28 @@ void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 	{
 		cout << "box hit" << endl;
 	}
-
+	
+		
+	
 }
 
 bool GameScreenLevel1::SetUpLevel1()
 {
 	SetLevelMap();
+	
+		CreateKoopaRight(Vector2D(50, 32), FACING_RIGHT, KOOPA_SPEED);
+		CreateKoopaRight(Vector2D(100, 32), FACING_RIGHT, KOOPA_SPEED);
+		CreateKoopaRight(Vector2D(200, 32), FACING_RIGHT, KOOPA_SPEED);
+		CreateKoopaLeft(Vector2D(450, 32), FACING_LEFT, KOOPA_SPEED);
+		CreateKoopaLeft(Vector2D(520, 32), FACING_LEFT, KOOPA_SPEED);
+		CreateKoopaLeft(Vector2D(490, 32), FACING_LEFT, KOOPA_SPEED);
+		
 
-	//set up enemies
-	for (int i = 0; i < 100; i++)
-	{
-		//RANDOM BETWEEN 4 PIPES
-		CreateKoopa(Vector2D(150, 32), FACING_RIGHT, KOOPA_SPEED);
-		Sleep(10);
-	}
+		
+
+		
+
+	
 
 	//set up player
 	Mario = new CharacterMario(m_renderer, "images/Mario.png", Vector2D(64, 330), m_level_map);
@@ -268,9 +276,15 @@ void GameScreenLevel1::UpdateEnemies(float deltatime, SDL_Event e)
 	
 }
 
-void GameScreenLevel1::CreateKoopa(Vector2D position, FACING direction, float speed)
+void GameScreenLevel1::CreateKoopaRight(Vector2D position, FACING direction, float speed)
 {
 	
-	Koopa = new CharacterKoopa(m_renderer, "images/Koopa.png", m_level_map, Vector2D(260, 350), FACING_RIGHT, KOOPA_SPEED);
+	Koopa = new CharacterKoopa(m_renderer, "images/Koopa.png", m_level_map, position, FACING_RIGHT, KOOPA_SPEED);
+	m_enemies.push_back(Koopa);
+}
+void GameScreenLevel1::CreateKoopaLeft(Vector2D position, FACING direction, float speed)
+{
+
+	Koopa = new CharacterKoopa(m_renderer, "images/Koopa.png", m_level_map, position, FACING_LEFT, KOOPA_SPEED);
 	m_enemies.push_back(Koopa);
 }

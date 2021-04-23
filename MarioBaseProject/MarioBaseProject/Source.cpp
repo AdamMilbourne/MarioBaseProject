@@ -31,6 +31,12 @@ int main(int argc, char* args[])
 
 	if (InitSDL())
 	{
+		LoadMusic("images/Mario.mp3");
+		if (Mix_PlayingMusic() == 0)
+		{
+			Mix_PlayMusic(g_music, -1);
+		}
+
 		game_screen_manager = new GameScreenManager(g_renderer, SCREEN_LEVEL1);
 		//start time
 		g_old_time = SDL_GetTicks();
@@ -41,15 +47,6 @@ int main(int argc, char* args[])
 		}
 	}
 
-	if (InitSDL())
-	{
-		LoadMusic("images/Mario.mp3");
-		if (Mix_PlayingMusic() == 0)
-		{
-			Mix_PlayMusic(g_music, -1);
-		}
-
-	}
 
 	CloseSDL();
 
